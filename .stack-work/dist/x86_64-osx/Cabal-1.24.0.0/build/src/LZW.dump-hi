@@ -1,0 +1,377 @@
+
+==================== FINAL INTERFACE ====================
+2016-11-14 06:27:23.616241 UTC
+
+interface PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:LZW 8001
+  interface hash: 2e39b912d11421ca37385e3ad53b4cd4
+  ABI hash: 0b94165d185855bad790e13534ce1c19
+  export-list hash: 7366802c3393e831a4301e07e6d79c0f
+  orphan hash: 49647ce698755c259154d41c86df78ea
+  flag hash: a4046e0fdab24403354cf30558c1ea1c
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  LZW.compressBuffer
+  LZW.decompressBuffer
+  LZW.forwardBuildDictionary
+  LZW.forwardCompression
+  LZW.forwardDecompression
+  LZW.lzwBuildDictionary
+  LZW.lzwCompress
+  LZW.lzwDecompress
+  LZW.startingASCIIToIntegerDictionary
+  LZW.startingIntegerToASCIIDictionary
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  base-4.9.0.0:Data.Char eb33dc25ecb52d018a0ca26590e2b50b
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.Maybe 5f2ba364cbe65c060bc5436bc0b9d049
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Char 3824744793840b1b7a48109a01ef7f24
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea27857993e3febae6a3
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base 8d095ad71634b5551ba5dc1307b7f9e5
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 62c0e736506aac47ef40569f5b82e19d
+f8e37450b68902ca6831572fdb2cdaed
+  $sfromList ::
+    [(GHC.Integer.Type.Integer, a)]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [(GHC.Integer.Type.Integer, a)]) ->
+                 case ds of wild {
+                   [] -> Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x ->
+                      case ds2 of wild2 {
+                        []
+                        -> case kx of dt { DEFAULT ->
+                           Data.Map.Base.Bin
+                             @ GHC.Integer.Type.Integer
+                             @ a
+                             1#
+                             dt
+                             x
+                             (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a)
+                             (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a) }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case GHC.Integer.Type.geInteger# kx ky of wild4 { DEFAULT ->
+                           case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild4 of wild5 {
+                             GHC.Types.False
+                             -> case kx of dt { DEFAULT ->
+                                LZW.$wpoly_go10
+                                  @ a
+                                  1#
+                                  (Data.Map.Base.Bin
+                                     @ GHC.Integer.Type.Integer
+                                     @ a
+                                     1#
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a)
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a))
+                                  wild2 }
+                             GHC.Types.True
+                             -> case kx of dt { DEFAULT ->
+                                LZW.$sfromList1
+                                  @ a
+                                  (Data.Map.Base.Bin
+                                     @ GHC.Integer.Type.Integer
+                                     @ a
+                                     1#
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a)
+                                     (Data.Map.Base.Tip @ GHC.Integer.Type.Integer @ a))
+                                  wild2 } } } } } } }) -}
+af457d356b29140d55197bbae2df8472
+  $sfromList1 ::
+    Data.Map.Base.Map GHC.Integer.Type.Integer a1
+    -> [(GHC.Integer.Type.Integer, a1)]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+53c76adf0299bbdba88924b94e088b21
+  $sfromList2 ::
+    [([GHC.Types.Char], a)] -> Data.Map.Base.Map [GHC.Types.Char] a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [([GHC.Types.Char], a)]) ->
+                 case ds of wild {
+                   [] -> Data.Map.Base.Tip @ [GHC.Types.Char] @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x ->
+                      case ds2 of wild2 {
+                        []
+                        -> case kx of dt { DEFAULT ->
+                           Data.Map.Base.Bin
+                             @ [GHC.Types.Char]
+                             @ a
+                             1#
+                             dt
+                             x
+                             (Data.Map.Base.Tip @ [GHC.Types.Char] @ a)
+                             (Data.Map.Base.Tip @ [GHC.Types.Char] @ a) }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case GHC.Classes.$fOrd[]_$s$ccompare1 kx ky of wild4 {
+                             DEFAULT
+                             -> case kx of dt { DEFAULT ->
+                                LZW.$sfromList3
+                                  @ a
+                                  (Data.Map.Base.Bin
+                                     @ [GHC.Types.Char]
+                                     @ a
+                                     1#
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a)
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a))
+                                  wild2 }
+                             GHC.Types.LT
+                             -> case kx of dt { DEFAULT ->
+                                LZW.$wpoly_go1
+                                  @ a
+                                  1#
+                                  (Data.Map.Base.Bin
+                                     @ [GHC.Types.Char]
+                                     @ a
+                                     1#
+                                     dt
+                                     x
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a)
+                                     (Data.Map.Base.Tip @ [GHC.Types.Char] @ a))
+                                  wild2 } } } } } }) -}
+8f2786e7bb930ede5a1be73696c46aee
+  $sfromList3 ::
+    Data.Map.Base.Map [GHC.Types.Char] a1
+    -> [([GHC.Types.Char], a1)]
+    -> Data.Map.Base.Map [GHC.Types.Char] a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+596f458e9e94f00d27aed66a42e74795
+  $sinsert_$sgo10 ::
+    GHC.Integer.Type.Integer
+    -> a1
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a1
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a1
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,1*U> -}
+084606e796e30c9689d12b6df4d92204
+  $sinsert_go10 ::
+    GHC.Classes.Ord k1 =>
+    k1 -> a1 -> Data.Map.Base.Map k1 a1 -> Data.Map.Base.Map k1 a1
+  {- Arity: 4,
+     Strictness: <L,U(A,C(C1(U)),A,A,A,A,A,A)><S,1*U><L,U><S,1*U> -}
+060949616da2ac38c3c986457cbfb1a5
+  $slookup1 ::
+    GHC.Integer.Type.Integer
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a -> GHC.Base.Maybe a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+1ce1f595a19ad2cb30f1fc1eb6f02964
+  $smember1 ::
+    [GHC.Types.Char]
+    -> Data.Map.Base.Map [GHC.Types.Char] a -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+222ee64c0a8f18b2529d616420f28b65
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module LZW.$trModule2 LZW.$trModule1) -}
+5485f9a055fd10b9087c2c071cf5bb18
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "LZW"#) -}
+8c3f38d708f6a2ae8be1639845ab5170
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN"#) -}
+c57ab3d26963679097817c52f42c47ea
+  $wforwardBuildDictionary ::
+    Data.Map.Base.Map GHC.Integer.Type.Integer [a]
+    -> [GHC.Integer.Type.Integer]
+    -> [GHC.Integer.Type.Integer]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer [a]
+  {- Arity: 3, Strictness: <S,U><S,1*U><L,1*U>, Inline: [0] -}
+06314282a80836caa6962cb9c6e9c74f
+  $wpoly_go1 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map [GHC.Types.Char] a
+    -> [([GHC.Types.Char], a)]
+    -> Data.Map.Base.Map [GHC.Types.Char] a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+61423ad6b41984f3ccc54f671630485b
+  $wpoly_go10 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a
+    -> [(GHC.Integer.Type.Integer, a)]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+121cecc394636f7b2ab03bef96ebd24c
+  compressBuffer ::
+    GHC.Classes.Ord k => Data.Map.Base.Map k a -> k -> a
+  {- Arity: 3,
+     Strictness: <L,U(A,C(C1(U)),A,A,A,A,A,A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ k
+                   ($dOrd :: GHC.Classes.Ord k)
+                   (dictionary :: Data.Map.Base.Map k a)
+                   (textInBuffer :: k) ->
+                 case Data.Map.Base.lookup
+                        @ k
+                        @ a
+                        $dOrd
+                        textInBuffer
+                        dictionary of wild {
+                   GHC.Base.Nothing -> Data.Maybe.fromJust1 @ a
+                   GHC.Base.Just x -> x }) -}
+84aa136ca38b189431b67bfbe4be4bae
+  decompressBuffer ::
+    GHC.Classes.Ord k => Data.Map.Base.Map k a -> k -> a
+  {- Arity: 3,
+     Strictness: <L,U(A,C(C1(U)),A,A,A,A,A,A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ k
+                   ($dOrd :: GHC.Classes.Ord k)
+                   (dictionary :: Data.Map.Base.Map k a)
+                   (code :: k) ->
+                 case Data.Map.Base.lookup @ k @ a $dOrd code dictionary of wild {
+                   GHC.Base.Nothing -> Data.Maybe.fromJust1 @ a
+                   GHC.Base.Just x -> x }) -}
+6baf5597f57483ba5421f50bfc9b2c70
+  forwardBuildDictionary ::
+    Data.Map.Base.Map GHC.Integer.Type.Integer [a]
+    -> [GHC.Integer.Type.Integer]
+    -> [GHC.Integer.Type.Integer]
+    -> [a]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer [a]
+  {- Arity: 4, Strictness: <S,U><S,1*U><L,1*U><L,A>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, True)
+                (\ @ a
+                   (w :: Data.Map.Base.Map GHC.Integer.Type.Integer [a])
+                   (w1 :: [GHC.Integer.Type.Integer])
+                   (w2 :: [GHC.Integer.Type.Integer])
+                   (w3 :: [a]) ->
+                 LZW.$wforwardBuildDictionary @ a w w1 w2) -}
+065a7f180b318a6dc3edf19e27e01b64
+  forwardCompression ::
+    GHC.Classes.Ord a =>
+    Data.Map.Base.Map [a] GHC.Integer.Type.Integer
+    -> [a]
+    -> [a]
+    -> [GHC.Integer.Type.Integer]
+    -> [GHC.Integer.Type.Integer]
+  {- Arity: 1,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),A,A,A,A,A,A)> -}
+a19123970767548f043f0e400d72069a
+  forwardCompression_forwardCompression ::
+    Data.Map.Base.Map [GHC.Types.Char] GHC.Integer.Type.Integer
+    -> [GHC.Types.Char]
+    -> [GHC.Types.Char]
+    -> [GHC.Integer.Type.Integer]
+    -> [GHC.Integer.Type.Integer]
+  {- Arity: 4, Strictness: <L,U><S,1*U><S,1*U><S,1*U> -}
+500abc7846af954d1122a5d6958ca118
+  forwardDecompression ::
+    Data.Map.Base.Map GHC.Integer.Type.Integer [a]
+    -> [GHC.Integer.Type.Integer]
+    -> [GHC.Integer.Type.Integer]
+    -> [a]
+    -> [a]
+  {- Arity: 4, Strictness: <L,U><S,1*U><L,1*U><S,1*U> -}
+554f7a09712867466fbe375c1e96165f
+  lzwBuildDictionary ::
+    [GHC.Integer.Type.Integer]
+    -> Data.Map.Base.Map GHC.Integer.Type.Integer [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (charCodes :: [GHC.Integer.Type.Integer]) ->
+                 LZW.forwardBuildDictionary
+                   @ GHC.Types.Char
+                   LZW.startingIntegerToASCIIDictionary
+                   charCodes
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+fac843b253ffbb4918aa1222b9a4f208
+  lzwCompress :: GHC.Base.String -> [GHC.Integer.Type.Integer]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (text :: GHC.Base.String) ->
+                 LZW.forwardCompression_forwardCompression
+                   LZW.startingASCIIToIntegerDictionary
+                   text
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+51d85b511136083f982f9b7d885da036
+  lzwDecompress :: [GHC.Integer.Type.Integer] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (charCodes :: [GHC.Integer.Type.Integer]) ->
+                 LZW.forwardDecompression
+                   @ GHC.Types.Char
+                   LZW.startingIntegerToASCIIDictionary
+                   charCodes
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+1dfca4d2e24cb642bf5e96a0e95ae453
+  startingASCIIToIntegerDictionary ::
+    Data.Map.Base.Map [GHC.Types.Char] GHC.Integer.Type.Integer
+  {- Unfolding: (LZW.$sfromList2
+                   @ GHC.Integer.Type.Integer
+                   LZW.startingASCIIToIntegerDictionary1) -}
+dc5a4b142631cdcae3d13125c371abe2
+  startingASCIIToIntegerDictionary1 ::
+    [([GHC.Types.Char], GHC.Integer.Type.Integer)]
+  {- Unfolding: (LZW.startingASCIIToIntegerDictionary_go 1#) -}
+3b529ea67e01a08b38aad21ec66b2413
+  startingASCIIToIntegerDictionary_go ::
+    GHC.Prim.Int# -> [([GHC.Types.Char], GHC.Integer.Type.Integer)]
+  {- Arity: 1, Strictness: <L,U> -}
+492085b5430b6547c43e3e91e73f0568
+  startingIntegerToASCIIDictionary ::
+    Data.Map.Base.Map GHC.Integer.Type.Integer [GHC.Types.Char]
+  {- Unfolding: (LZW.$sfromList
+                   @ [GHC.Types.Char]
+                   LZW.startingIntegerToASCIIDictionary1) -}
+67c9c17b53c0b4e300a91c89f8f74063
+  startingIntegerToASCIIDictionary1 ::
+    [(GHC.Integer.Type.Integer, [GHC.Types.Char])]
+  {- Unfolding: (LZW.startingIntegerToASCIIDictionary_go 1#) -}
+e350a7cf5754d23c1c833ccb9e63c951
+  startingIntegerToASCIIDictionary_go ::
+    GHC.Prim.Int# -> [(GHC.Integer.Type.Integer, [GHC.Types.Char])]
+  {- Arity: 1, Strictness: <L,U> -}
+"SPEC/LZW fromList @ Integer _" [ALWAYS] forall @ a
+                                                ($dOrd :: GHC.Classes.Ord GHC.Integer.Type.Integer)
+  Data.Map.Base.fromList @ GHC.Integer.Type.Integer @ a $dOrd
+  = LZW.$sfromList @ a
+"SPEC/LZW fromList @ [Char] _" [ALWAYS] forall @ a
+                                               ($dOrd :: GHC.Classes.Ord [GHC.Types.Char])
+  Data.Map.Base.fromList @ [GHC.Types.Char] @ a $dOrd
+  = LZW.$sfromList2 @ a
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
