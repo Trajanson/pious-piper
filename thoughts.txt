@@ -1,0 +1,291 @@
+dictionary             = {}
+remainingText          = 'ab'
+textInBuffer           = ''
+accumulatedCompression = []
+
+dictionary             = {}
+remainingText          = 'b'
+textInBuffer           = 'a'   ---- in dictionary so get next
+accumulatedCompression = []
+
+dictionary             = {''}
+remainingText          = ''
+textInBuffer           = 'ab'    ---- not in dictionary so push init into comp accumulatedCompression
+accumulatedCompression = []
+
+dictionary             = {'ab: 128'}
+remainingText          = ''
+textInBuffer           = 'b'
+accumulatedCompression = [97]
+
+dictionary             = {'ab: 128'}
+remainingText          = ''
+textInBuffer           = ''
+accumulatedCompression = [97, 98]
+
+
+
+
+
+
+dictionary             = {}
+remainingText          = 'ababa'
+textInBuffer           = ''
+accumulatedCompression = []
+
+dictionary             = {}
+remainingText          = 'baba'
+textInBuffer           = 'a'   ---- in dictionary so get next
+accumulatedCompression = []
+
+dictionary             = {}
+remainingText          = 'aba'
+textInBuffer           = 'ab'   ---- not in dictionary so push init into comp
+accumulatedCompression = []
+
+dictionary             = {'ab': 128}
+remainingText          = 'aba'
+textInBuffer           = 'b'    ---- in dictionary so get next
+accumulatedCompression = [97]
+
+dictionary             = {'ab': 128}
+remainingText          = 'ba'
+textInBuffer           = 'ba'   ---- not in dictionary so push init into comp
+accumulatedCompression = [97]
+
+dictionary             = {'ab': 128, 'ba': 129}
+remainingText          = 'ba'
+textInBuffer           = 'a'    ---- in dictionary so get next
+accumulatedCompression = [97, 98]
+
+dictionary             = {'ab': 128, 'ba': 129}
+remainingText          = 'a'
+textInBuffer           = 'ab'    ---- in dictionary so get next
+accumulatedCompression = [97, 98]
+
+dictionary             = {'ab': 128, 'ba': 129}
+remainingText          = ''
+textInBuffer           = 'aba'    ---- not in dictionary so push init into comp
+accumulatedCompression = [97, 98]
+
+dictionary             = {'ab': 128, 'ba': 129, 'aba': 130}
+remainingText          = ''
+textInBuffer           = 'a'    ---- in dictionary and remaining text is empty
+                                ---- so push into compression and finish
+accumulatedCompression = [97, 98, 128]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dictionary         = {}
+remainingCharCodes = [97, 98]
+buffer             = ""
+accumulatedText    = ""
+
+dictionary         = {}
+remainingCharCodes = [98]
+buffer             = "97" -- is in dictionary so add next code
+accumulatedText    = "a"
+
+dictionary         = {}
+remainingCharCodes = [] -- empty so stop
+buffer             = "ab"
+accumulatedText    = "ab"
+
+
+
+
+
+
+
+
+dictionary         = {}
+remainingCharCodes = [97, 98, 128]
+buffer             = "" -- empty so add next code
+accumulatedText    = ""
+
+dictionary         = {}
+remainingCharCodes = [98, 128]
+buffer             = "a" -- is in dictionary so add next code
+accumulatedText    = "a"
+
+dictionary         = {}
+remainingCharCodes = [128]
+buffer             = "ab" -- is not in dictionary so add to dict
+accumulatedText    = "ab"
+
+dictionary         = {128: "ab"}
+remainingCharCodes = [128]
+buffer             = "" -- empty so add next code
+accumulatedText    = "ab"
+
+dictionary         = {128: "ab"}
+remainingCharCodes = []
+buffer             = "ab"
+accumulatedText    = "abab"
+
+
+
+
+
+
+
+
+
+
+
+***** WRONG *****
+fromList [(1,"\SOH"),(2,"\STX"),(3,"\ETX"),(4,"\EOT"),(5,"\ENQ"),(6,"\ACK"),(7,"\a"),(8,"\b"),(9,"\t"),
+          (10,"\n"),(11,"\v"),(12,"\f"),(13,"\r"),(14,"\SO"),(15,"\SI"),(16,"\DLE"),(17,"\DC1"),(18,"\DC2"),
+          (19,"\DC3"),(20,"\DC4"),(21,"\NAK"),(22,"\SYN"),(23,"\ETB"),(24,"\CAN"),(25,"\EM"),(26,"\SUB"),
+          (27,"\ESC"),(28,"\FS"),(29,"\GS"),(30,"\RS"),(31,"\US"),(32," "),(33,"!"),(34,"\""),(35,"#"),(36,"$"),
+          (37,"%"),(38,"&"),(39,"'"),(40,"("),(41,")"),(42,"*"),(43,"+"),(44,","),(45,"-"),(46,"."),(47,"/"),
+          (48,"0"),(49,"1"),(50,"2"),(51,"3"),(52,"4"),(53,"5"),(54,"6"),(55,"7"),(56,"8"),(57,"9"),(58,":"),
+          (59,";"),(60,"<"),(61,"="),(62,">"),(63,"?"),(64,"@"),(65,"A"),(66,"B"),(67,"C"),(68,"D"),(69,"E"),
+          (70,"F"),(71,"G"),(72,"H"),(73,"I"),(74,"J"),(75,"K"),(76,"L"),(77,"M"),(78,"N"),(79,"O"),(80,"P"),
+          (81,"Q"),(82,"R"),(83,"S"),(84,"T"),(85,"U"),(86,"V"),(87,"W"),(88,"X"),(89,"Y"),(90,"Z"),(91,"["),
+          (92,"\\"),(93,"]"),(94,"^"),(95,"_"),(96,"`"),(97,"a"),(98,"b"),(99,"c"),(100,"d"),(101,"e"),(102,"f"),
+          (103,"g"),(104,"h"),(105,"i"),(106,"j"),(107,"k"),(108,"l"),(109,"m"),(110,"n"),(111,"o"),(112,"p"),
+          (113,"q"),(114,"r"),(115,"s"),(116,"t"),(117,"u"),(118,"v"),(119,"w"),(120,"x"),(121,"y"),(122,"z"),
+          (123,"{"),(124,"|"),(125,"}"),(126,"~"),(127,"\DEL"),(128,"TO"),(129,"OB"),(130,"BE"),(131,"EO"),
+          (132,"OR"),(133,"RN"),(134,"NO"),(135,"OT"),(136,"TTO"),(137,"TOBE"),(138,"BEOR"),(139,"ORTOBE"),
+          (140,"TOBEEO"),(141,"EORN")]
+***** WRONG *****
+
+    dictionary         = {}
+    remainingCharCodes = [84,79,66,69,79,82,78,79,84,128,130,132,137,131,133,135]
+    buffer             = "" -- empty so get next code
+    accumulatedText    = ""
+
+    dictionary         = {}
+    remainingCharCodes = [79,66,69,79,82,78,79,84,128,130,132,137,131,133,135]
+    buffer             = "T"  -- get next
+    accumulatedText    = "T"
+
+dictionary         = {128: "T0"}
+remainingCharCodes = [66,69,79,82,78,79,84,128,130,132,137,131,133,135]
+buffer             = "TO"  -- store in dict since has two and shift first
+accumulatedText    = "TO"
+
+    dictionary         = {128: "T0"}
+    remainingCharCodes = [66,69,79,82,78,79,84,128,130,132,137,131,133,135]
+    buffer             = "O" -- get next
+    accumulatedText    = "TO"
+
+dictionary         = {128: "T0", 129: "OB"}
+remainingCharCodes = [69,79,82,78,79,84,128,130,132,137,131,133,135]
+buffer             = "OB" -- store in dict since has two and shift first
+accumulatedText    = "TOB"
+
+    dictionary         = {128: "T0", 129: "OB"}
+    remainingCharCodes = [69,79,82,78,79,84,128,130,132,137,131,133,135]
+    buffer             = "B" -- get next
+    accumulatedText    = "TOB"
+
+dictionary         = {128: "T0", 129: "OB", 130: "BE"}
+remainingCharCodes = [79,82,78,79,84,128,130,132,137,131,133,135]
+buffer             = "BE" -- store in dict since has two and shift first
+accumulatedText    = "TOBE"
+
+    dictionary         = {128: "T0", 129: "OB", 130: "BE"}
+    remainingCharCodes = [79,82,78,79,84,128,130,132,137,131,133,135]
+    buffer             = "E" -- get next
+    accumulatedText    = "TOBE"
+
+dictionary         = {128: "T0", 129: "OB", 130: "BE", 131: "EO"}
+remainingCharCodes = [82,78,79,84,128,130,132,137,131,133,135]
+buffer             = "EO" -- store in dict since has two and shift first
+accumulatedText    = "TOBEO"
+
+    dictionary         = {128: "T0", 129: "OB", 130: "BE", 131: "EO"}
+    remainingCharCodes = [82,78,79,84,128,130,132,137,131,133,135]
+    buffer             = "O" -- get next
+    accumulatedText    = "TOBEO"
+
+dictionary         = {128: "T0", 129: "OB", 130: "BE", 131: "EO", 132: "OR"}
+remainingCharCodes = [78,79,84,128,130,132,137,131,133,135]
+buffer             = "O R" -- store in dict since has two and shift first
+accumulatedText    = "TOBEOR"
+
+    dictionary         = {128: "T0", 129: "OB", 130: "BE", 131: "EO", 132: "OR"}
+    remainingCharCodes = [78,79,84,128,130,132,137,131,133,135]
+    buffer             = "R" -- get next
+    accumulatedText    = "TOBEOR"
+
+dictionary         = {128: "T0", 129: "OB", 130: "BE", 131: "EO", 132: "OR", 133: "RN"}
+remainingCharCodes = [79,84,128,130,132,137,131,133,135]
+buffer             = "R N" -- store in dict since has two and shift first
+accumulatedText    = "TOBEOR"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+256, 258, 260, 265, 259, 261, 263
+TO    BE   OR  TOB  EO    RN   OT
+
+
+
+
+
+
+
+
+
+
+"TOBEORNOTTOTETRTTETOTNTT"
+"TOBEORNOTTOBEORTOBEORNOT"
+[84,79,66,69,79,82,78,79,84,128,130,132,137,131,133,135]
+
+
+
+[84,79,66,69,79,82,78,79,84,128,130,132,137,131,133,135]
+  T  O  B  E  O  R  N  O  T  TO  BE  OR  TO  BE  OR  NOT
+T
+--

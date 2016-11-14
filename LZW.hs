@@ -5,15 +5,17 @@ import qualified Data.Char as Char
 import Data.Maybe
 
 
-startingASCIIDictionary :: Map.Map [Char] Integer
-startingASCIIDictionary = Map.fromList [tupelize x | x <- [1..127] ]
+
+startingASCIIToIntegerDictionary :: Map.Map [Char] Integer
+startingASCIIToIntegerDictionary = Map.fromList [tupelize x | x <- [1..127] ]
   where tupelize x = ([Char.chr x], toInteger x)
 
 
 
 
 lzwCompress :: String -> [Integer]
-lzwCompress text = forwardCompression (startingASCIIDictionary) text [] []
+lzwCompress text = forwardCompression (startingASCIIToIntegerDictionary) text [] []
+
 
 
 -- CONDITIONS
@@ -44,7 +46,8 @@ lzwCompress text = forwardCompression (startingASCIIDictionary) text [] []
 --                 dictionary remainingText textInBuffer accumulatedCompression
 forwardCompression dictionary []            []           accumulatedCompression = accumulatedCompression
 forwardCompression dictionary []            textInBuffer accumulatedCompression
-    | Map.member textInBuffer dictionary = ( accumulatedCompression ++
+    | Map.member textInBuffer dictionary =
+                                           ( accumulatedCompression ++
                                              [compressBuffer dictionary textInBuffer]
                                            )
     | otherwise                          = forwardCompression dictionary
@@ -72,3 +75,93 @@ forwardCompression dictionary remainingText textInBuffer accumulatedCompression
 
 compressBuffer dictionary textInBuffer
  | otherwise = fromJust (Map.lookup textInBuffer dictionary)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+startingIntegerToASCIIDictionary :: Map.Map Integer [Char]
+startingIntegerToASCIIDictionary = Map.fromList [tupelize x | x <- [1..127] ]
+ where tupelize x = (toInteger x, [Char.chr x])
+
+
+
+
+
+-- lzwDecompress :: [Integer] -> String
+lzwDecompress charCodes = forwardDecompression (startingIntegerToASCIIDictionary) charCodes [] []
+
+
+
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-- CONVERT BUFFER TO CODES NOT LETTERS
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+
+ --                  dictionary remainingCharCodes buffer accumulatedText
+-- forwardDecompression dictionary []                 buffer accumulatedText = accumulatedText
+forwardDecompression dictionary []                 buffer accumulatedText = dictionary
+forwardDecompression dictionary remainingCharCodes []     accumulatedText = forwardDecompression dictionary
+                                                                                                 (tail remainingCharCodes)
+                                                                                                 [head remainingCharCodes]
+                                                                                                 (accumulatedText ++ (decompressBuffer dictionary (head remainingCharCodes)))
+forwardDecompression dictionary remainingCharCodes buffer accumulatedText
+  | length buffer == 2  = forwardDecompression (Map.insert ((toInteger $ Map.size dictionary) + 1)
+                                                           (concat (Prelude.map (\a -> decompressBuffer dictionary a) buffer))
+                                                           dictionary)
+                                               (remainingCharCodes)
+                                               (tail buffer)
+                                               (accumulatedText)
+  | length buffer == 1  = forwardDecompression dictionary
+                                               (tail remainingCharCodes)
+                                               (buffer ++ [head remainingCharCodes] )
+                                               (accumulatedText ++ (decompressBuffer dictionary (head remainingCharCodes)))
+
+
+
+
+
+--  --                  dictionary remainingCharCodes buffer accumulatedText
+-- forwardDecompression dictionary []                 buffer accumulatedText = accumulatedText
+-- forwardDecompression dictionary remainingCharCodes []     accumulatedText = forwardDecompression dictionary
+--                                                                                                  (tail remainingCharCodes)
+--                                                                                                  (decompressBuffer dictionary (head remainingCharCodes))
+--                                                                                                  (accumulatedText ++ (decompressBuffer dictionary (head remainingCharCodes)))
+-- forwardDecompression dictionary remainingCharCodes buffer accumulatedText
+--   | length buffer == 2  = forwardDecompression (Map.insert ((toInteger $ Map.size dictionary) + 1)
+--                                                            (buffer ++ (decompressBuffer dictionary (head remainingCharCodes)) )
+--                                                            dictionary)
+--                                                (tail remainingCharCodes)
+--                                                (tail buffer)
+--                                                (accumulatedText ++ (decompressBuffer dictionary (head remainingCharCodes)))
+--   | length buffer == 1  = forwardDecompression dictionary
+--                                                (tail remainingCharCodes)
+--                                                (buffer ++ (decompressBuffer dictionary (head remainingCharCodes)))
+--                                                (accumulatedText ++ (decompressBuffer dictionary (head remainingCharCodes)))
+
+
+
+
+
+decompressBuffer dictionary code
+  | otherwise = fromJust (Map.lookup code dictionary)
