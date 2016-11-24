@@ -1,0 +1,97 @@
+
+==================== FINAL INTERFACE ====================
+2016-11-24 22:46:45.158098 UTC
+
+interface main@main:Main 8001
+  interface hash: 26febfb5171af0283f2ec3a30104f99b
+  ABI hash: a501652186586fe34546cd8afa24cd11
+  export-list hash: 4b4becec6816966ea817836ce14782aa
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 4f9b8f45c6fdf39c5f6cbd6150ac3df1
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies:
+package dependencies: PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:Data.String.Strip 51bcb0f9ed8061c8530ab636d17b17ed
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:LZW 0b94165d185855bad790e13534ce1c19
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  base-4.9.0.0:System.Environment ee0914a962f5508d0fd404c89ee4999b
+import  -/  base-4.9.0.0:System.IO ad985d7a3fc986e9b9c610fb344d9106
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+c8efbeef303a7f860d0a2373fa734fab
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+93e8cabb05c1a6ae2aa658e61670dbd9
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.FD.openFile1
+                        (GHC.List.head @ GHC.Base.String ipv1)
+                        GHC.IO.IOMode.ReadMode
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv3
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (GHC.Show.$fShowInteger_$cshowList
+                      (LZW.forwardCompression_forwardCompression
+                         LZW.startingASCIIToIntegerDictionary
+                         ipv5
+                         (GHC.Types.[] @ GHC.Types.Char)
+                         (GHC.Types.[] @ GHC.Integer.Type.Integer))
+                      (GHC.Types.[] @ GHC.Types.Char))
+                   GHC.Types.True
+                   ipv4 } } }) -}
+af950d0d14d5c5e7c398b964d496f5a9
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

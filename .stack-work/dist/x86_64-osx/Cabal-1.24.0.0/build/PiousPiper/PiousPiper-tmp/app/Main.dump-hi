@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-14 06:27:24.296757 UTC
+2016-11-24 22:27:56.896217 UTC
 
 interface main@main:Main 8001
-  interface hash: 8119125fa194659e0fa9c970f40b66e7
-  ABI hash: 7111e771ee954b13dee1c315e27bd542
+  interface hash: 3d1661267bef46c0067637dac7888293
+  ABI hash: 799326071161dfca728de5fbc88b5ce4
   export-list hash: 4b4becec6816966ea817836ce14782aa
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c18a8526b3f74fa52626521cdd4a2fa
@@ -47,12 +47,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-dad7687753f9fb2e6332c4d2ff0cc49c
+1c48098b0f65fd86fefe12ffe9af41a2
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-b299efc1a7d01dc1e301951067543f27
+7ba884c8cb2445b9f6b917751733c214
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -64,23 +64,27 @@ b299efc1a7d01dc1e301951067543f27
                    Main.main2
                    GHC.Types.True
                    eta) -}
-f68a1cd85166bd3ea234a3aabe33e6ca
-  main2 :: GHC.Base.String
-  {- Unfolding: (GHC.Show.$fShowInteger_$cshowList
-                   Main.main3
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-3b5f763c515292f8fd0d9564a8258092
-  main3 :: [GHC.Integer.Type.Integer]
-  {- Unfolding: (LZW.forwardCompression_forwardCompression
-                   LZW.startingASCIIToIntegerDictionary
-                   Main.main4
-                   (GHC.Types.[] @ GHC.Types.Char)
-                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
-d3a58fdfe8fe1149ab16fb15b662f21d
+ff46ac62d48a9124e9a8fba28044497f
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   Main.main3) -}
+e34c1e3268fda386bca3b71bd0c7bd5f
+  main3 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showLitString Main.main5 Main.main4) -}
+a35b7e9355d5dc3db7e1203bfff470b7
   main4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "aa"#) -}
-41437a6bb8f6fd1964c248b58b5178d5
-  main5 ::
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+eeac06184cc397fbe4002357455566d8
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "55"#) -}
+c4306dbf2292492fbd8607ec8ad6a4ea
+  main6 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
