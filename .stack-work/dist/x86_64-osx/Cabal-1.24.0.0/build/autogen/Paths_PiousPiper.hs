@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/trajanson/Desktop/Pious Piper/.stack-work/install/x86_64-osx/lts-7.8/8.0.1/bin"
-libdir     = "/Users/trajanson/Desktop/Pious Piper/.stack-work/install/x86_64-osx/lts-7.8/8.0.1/lib/x86_64-osx-ghc-8.0.1/PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN"
+libdir     = "/Users/trajanson/Desktop/Pious Piper/.stack-work/install/x86_64-osx/lts-7.8/8.0.1/lib/x86_64-osx-ghc-8.0.1/PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv"
 datadir    = "/Users/trajanson/Desktop/Pious Piper/.stack-work/install/x86_64-osx/lts-7.8/8.0.1/share/x86_64-osx-ghc-8.0.1/PiousPiper-0.1.0.0"
 libexecdir = "/Users/trajanson/Desktop/Pious Piper/.stack-work/install/x86_64-osx/lts-7.8/8.0.1/libexec"
 sysconfdir = "/Users/trajanson/Desktop/Pious Piper/.stack-work/install/x86_64-osx/lts-7.8/8.0.1/etc"

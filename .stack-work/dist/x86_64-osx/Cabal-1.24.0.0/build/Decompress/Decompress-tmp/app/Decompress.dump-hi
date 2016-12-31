@@ -1,0 +1,186 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-31 07:59:02.679311 UTC
+
+interface main@main:Main 8001
+  interface hash: 1f3d97974d4630d7594e6312d883b71b
+  ABI hash: dc62d6260432776a68e2b3b069ba098c
+  export-list hash: 7cf29f26d6d43bc4e410139308365f8f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 941cf91fe68c7455e687bb1992225e23
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+  Main.succAll
+module dependencies:
+package dependencies: PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 filepath-1.4.1.0@filepath-1.4.1.0
+                      ghc-prim-0.5.0.0 integer-gmp-1.0.0.1
+                      parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Data.String.Strip 5dc1e365eb2e0f0d6353312687e650a5
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:LZW b3636529a2b1454c5fb750f43dce0743
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:ReaderWriter 1b58139f21ff90c3e3339ac8b62b32b2
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Utilities 7a90a8ab2e620702b0c62e3bd7eb9f23
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Enum fdf7ac3e1b0be0a4a37257601bddad14
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  base-4.9.0.0:System.Environment ee0914a962f5508d0fd404c89ee4999b
+import  -/  base-4.9.0.0:System.IO ad985d7a3fc986e9b9c610fb344d9106
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi:Control.Parallel.Strategies 1c0bb3276a94decb36d1d61330e155a0
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+e17827aa7d2e282cf6866d88eb772ea9
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+164bdf7cc8b4d9f829c27d80b67601d3
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
+                 let {
+                   filename :: GHC.Base.String
+                   = case ipv1 of wild {
+                       [] -> GHC.List.badHead @ GHC.Base.String : x ds2 -> x }
+                 } in
+                 case Control.Exception.Base.bracket1
+                        @ GHC.IO.Handle.Types.Handle
+                        @ ()
+                        @ Data.ByteString.Internal.ByteString
+                        (GHC.IO.Handle.FD.openBinaryFile1 filename GHC.IO.IOMode.ReadMode)
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                        GHC.IO.Handle.hClose1
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                        Data.ByteString.readFile2
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle>_R
+                         ->_R Sym (GHC.Types.N:IO[0]
+                                       <Data.ByteString.Internal.ByteString>_R))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case ReaderWriter.writeDecompressedTextToFile1
+                        filename
+                        (let {
+                           listOfParallelData :: [[GHC.Integer.Type.Integer]]
+                           = Main.main6 (ReaderWriter.getCompressedDataAsIntegers ipv3)
+                         } in
+                         case GHC.Prim.spark#
+                                @ [GHC.Types.Char]
+                                @ GHC.Prim.RealWorld
+                                (case listOfParallelData of wild {
+                                   [] -> case GHC.List.badHead ret_ty [GHC.Types.Char] of {}
+                                   : x ds3
+                                   -> LZW.forwardDecompression
+                                        @ GHC.Types.Char
+                                        LZW.startingIntegerToASCIIDictionary
+                                        x
+                                        (GHC.Types.[] @ GHC.Integer.Type.Integer)
+                                        (GHC.Types.[] @ GHC.Types.Char) })
+                                GHC.Prim.realWorld# of ds3 { (#,#) ipv4 ipv5 ->
+                         case GHC.Prim.spark#
+                                @ [GHC.Types.Char]
+                                @ GHC.Prim.RealWorld
+                                (LZW.forwardDecompression
+                                   @ GHC.Types.Char
+                                   LZW.startingIntegerToASCIIDictionary
+                                   (Main.main_go
+                                      listOfParallelData
+                                      (GHC.List.lastError @ [GHC.Integer.Type.Integer]))
+                                   (GHC.Types.[] @ GHC.Integer.Type.Integer)
+                                   (GHC.Types.[] @ GHC.Types.Char))
+                                ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                         (ipv5, ipv7) } })
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Main.main2
+                   GHC.Types.True
+                   ipv4 } } }) -}
+a227ea67319cfb6c3822765af0c79435
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   Main.main3) -}
+776cd73a8eda88dffa7ba838a0b0d73e
+  main3 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showLitString Main.main5 Main.main4) -}
+a35b7e9355d5dc3db7e1203bfff470b7
+  main4 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+51c6a608b5e3db4bb98a60c9cbadcf31
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "SUCCESSFULLY DECOMPRESSED!"#) -}
+f7d65e92cc823b7c6a6d674298f75634
+  main6 :: [GHC.Integer.Type.Integer] -> [[GHC.Integer.Type.Integer]]
+  {- Unfolding: (Data.List.Split.Internals.splitOn
+                   @ GHC.Integer.Type.Integer
+                   GHC.Integer.Type.$fEqInteger
+                   ReaderWriter.splitCompressedIntegersOnDividerValue1) -}
+ce1d569116b92016564f3d465e383499
+  main7 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+2b0a4173174950f21ac39d7a71ef95bd
+  main_go ::
+    [[GHC.Integer.Type.Integer]]
+    -> [GHC.Integer.Type.Integer] -> [GHC.Integer.Type.Integer]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+b040406592241712e08ee8ba93be8471
+  succAll :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1,
+     Unfolding: (GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   GHC.Enum.$fEnumChar_$csucc) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

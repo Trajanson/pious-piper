@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-14 06:27:28.010798 UTC
+2016-12-31 08:14:22.345997 UTC
 
 interface main@main:Data.String.StripSpec 8001
-  interface hash: 33f6869f20472bc77c430e7ef3303f9f
-  ABI hash: 9587d32c1f442a9cfcbf0ab179378255
-  export-list hash: 3c163e4b26fc3fe17e11dc6609f1982b
+  interface hash: 1daf094844a6205e9886eade42b9f45d
+  ABI hash: 7f45fda23a6fca03c1497c7d0c6ccd9f
+  export-list hash: 1390db3d5648537d9c65da3331b23d9b
   orphan hash: fabecb70690078dfd96c1f84198ec196
   flag hash: 42e95ec8668218c51a9f0c5616a5134b
   sig of: Nothing
@@ -16,7 +16,7 @@ exports:
   Data.String.StripSpec.spec
 module dependencies:
 package dependencies: HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk
-                      PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN
+                      PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv
                       QuickCheck-2.8.2@QuickCheck-2.8.2-KPm3V9n9OMa9urRrdeE4gm
                       ansi-terminal-0.6.2.3@ansi-terminal-0.6.2.3-448ipfN5j28Ha0AgPiJmdI
                       array-0.5.1.1@array-0.5.1.1
@@ -61,7 +61,7 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
                          primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
                          template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
-import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:Data.String.Strip 51bcb0f9ed8061c8530ab636d17b17ed
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Data.String.Strip 5dc1e365eb2e0f0d6353312687e650a5
 import  -/  QuickCheck-2.8.2@QuickCheck-2.8.2-KPm3V9n9OMa9urRrdeE4gm:Test.QuickCheck 03991d16666e94ff5765e0b0d7c8943c
 import  -/  QuickCheck-2.8.2@QuickCheck-2.8.2-KPm3V9n9OMa9urRrdeE4gm:Test.QuickCheck.Property 483e6c4e16e8e61d77c4fa886d8f6cc7
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
@@ -96,14 +96,14 @@ dd0f273892ac23608fa154298180562a
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-81ee9c677b788d70c6101fe603c50a3d
+0a86e8db5b053e8d13f3de301f1695e1
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Data.String.StripSpec.main1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-8fbecf893dc64e5037ccd3d4ce8a7279
+b45b2dba06e2b4044622e3b9eefcdd02
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -129,7 +129,7 @@ dd0f273892ac23608fa154298180562a
                  case x of wild2 {
                    DEFAULT -> System.Exit.die2 @ () ipv
                    0# -> (# ipv, GHC.Tuple.() #) } } } }) -}
-fb252d7ed548d3a41a20ef84f1ac81f2
+cc2774c187ac6d65891f81f54d5ed9a3
   main10 :: [GHC.Types.Char] -> Test.QuickCheck.Property.Property
   {- Arity: 1,
      Unfolding: (\ (x' :: [GHC.Types.Char]) ->
@@ -186,7 +186,7 @@ d368314315869cd22ef07a045660b40f
   main19 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "test/Data/String/StripSpec.hs"#) -}
-7695f85b69ea57ef5bd54b017485fabf
+3a4982ca3a205d6691b1aa09b42498fe
   main2 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
@@ -208,7 +208,7 @@ b60c27ba0a96f397c627ec8f3a36584c
 6ec9e5d4d79af49505b4f5b0bfe78ea3
   main22 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "it"#) -}
-c8eacbca3d6edb785269bd89e6cc2100
+b490c955475cff62bc92524c006e04bd
   main23 ::
     [Test.Hspec.Core.Tree.SpecTree
        (Test.Hspec.Core.Example.Arg Test.Hspec.Expectations.Expectation)]
@@ -220,7 +220,7 @@ c8eacbca3d6edb785269bd89e6cc2100
                       @ (Test.Hspec.Core.Tree.SpecTree
                            (Test.Hspec.Core.Example.Arg
                               Test.Hspec.Expectations.Expectation)))) -}
-daffbe9181bccf4785478a0f968dce66
+6bd9ecb96395c66115d30bc66be4cfb9
   main24 ::
     Test.Hspec.Core.Tree.SpecTree
       (Test.Hspec.Core.Example.Arg Test.Hspec.Expectations.Expectation)
@@ -253,7 +253,7 @@ daffbe9181bccf4785478a0f968dce66
                    @ (Test.Hspec.Core.Tree.Item
                         (Test.Hspec.Core.Example.Arg Test.Hspec.Expectations.Expectation))
                    ww1 }) -}
-96d9497fc41a21dc10b37d827763cec4
+8c4517dac14f2d68ef2e69bc0d78e9a7
   main25 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -270,7 +270,7 @@ daffbe9181bccf4785478a0f968dce66
 dfd2235a6e0b4d86504501abcb4df0d3
   main26 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "foo bar"#) -}
-166676e0cfb2963135dc7fe495daa6fd
+d137dbb2a6fbc5f054f5be294420f234
   main27 :: GHC.Base.String
   {- Unfolding: (Data.String.Strip.strip
                    Data.String.StripSpec.main28) -}
@@ -283,7 +283,7 @@ dfd2235a6e0b4d86504501abcb4df0d3
                    Data.String.StripSpec.main34
                    Data.String.StripSpec.main30
                    GHC.Stack.Types.EmptyCallStack) -}
-04176fa6edc4c77fd7f25f4f15c7d311
+20f3b7ed09555b1aecd69b99639c40dd
   main3 ::
     ((),
      [Test.Hspec.Core.Tree.Tree
@@ -341,7 +341,7 @@ cb967100f0173c7e77006af3f5918fe6
 522ddf27214f898fbdcc90c40bc72234
   main39 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 16#) -}
-c7daf99b01900ec0f8ae48dd760544bb
+2fd88016af5aa3fd4c9297b46e30486c
   main4 ::
     [Test.Hspec.Core.Tree.Tree
        (Test.Hspec.Core.Example.ActionWith ())
@@ -367,7 +367,7 @@ e031743440c8386e74ca19630f9ef8c0
 b228083b718de441ddbecff8e6c3a21b
   main42 :: GHC.Types.Char
   {- HasNoCafRefs, Unfolding: (GHC.Types.C# 's'#) -}
-4204c1fe1038f1b13eb2a0b73e7e9b83
+d1ecf90e07fa8a0424c210c2bd800af1
   main5 ::
     Test.Hspec.Core.Tree.Tree
       (Test.Hspec.Core.Example.ActionWith ())
@@ -377,7 +377,7 @@ b228083b718de441ddbecff8e6c3a21b
                    @ (Test.Hspec.Core.Tree.Item ())
                    Data.String.StripSpec.main40
                    Data.String.StripSpec.main6) -}
-176e928bad38e1624b77e3882c226de1
+de9f206a85fbb8a14882a168fa726f72
   main6 ::
     [Test.Hspec.Core.Tree.Tree
        (Test.Hspec.Core.Example.ActionWith ())
@@ -400,7 +400,7 @@ b228083b718de441ddbecff8e6c3a21b
                          ->_R <GHC.Types.IO ()>_R)
                         (Test.Hspec.Core.Tree.Item
                            (Sub (Test.Hspec.Core.Example.D:R:ArgProperty[0])))_R)_R])_R) -}
-38b37479f1df5b4fe88d3ee965797274
+f2d08d64288c6d44a7de6fba447de80f
   main7 ::
     [Test.Hspec.Core.Tree.SpecTree
        (Test.Hspec.Core.Example.Arg Test.QuickCheck.Property.Property)]
@@ -412,7 +412,7 @@ b228083b718de441ddbecff8e6c3a21b
                       @ (Test.Hspec.Core.Tree.SpecTree
                            (Test.Hspec.Core.Example.Arg
                               Test.QuickCheck.Property.Property)))) -}
-8730773bb584cd80e755a00f2f75eff9
+6ed2b1237be72d6e93a1a42cd818de78
   main8 ::
     Test.Hspec.Core.Tree.SpecTree
       (Test.Hspec.Core.Example.Arg Test.QuickCheck.Property.Property)
@@ -448,7 +448,7 @@ b228083b718de441ddbecff8e6c3a21b
                    @ (Test.Hspec.Core.Tree.Item
                         (Test.Hspec.Core.Example.Arg Test.QuickCheck.Property.Property))
                    ww1 }) -}
-77b1b39674b0735e66e5cf44c26fd43a
+2d2dd586f9738b7fe0fc14478e486d08
   main9 ::
     Test.QuickCheck.Random.QCGen
     -> GHC.Types.Int -> Test.QuickCheck.Property.Prop
@@ -485,7 +485,7 @@ b228083b718de441ddbecff8e6c3a21b
                    (case ds1 of wild { (,) g1 g2 ->
                     g2 `cast` (Sym (Test.QuickCheck.Random.N:QCGen[0])) })
                    eta1) -}
-c12dd7b4aba560542efe4beeec68d63d
+0692329acb505e33a45f2a60aa80b049
   spec :: Test.Hspec.Core.Spec.Monad.Spec
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)

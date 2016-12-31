@@ -1,0 +1,52 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-31 06:46:04.056771 UTC
+
+interface PiousPiper-0.1.0.0-JMCTGPBLxl9LdhHNld1z3l:PiousPiperSettings 8001
+  interface hash: 7f7fd0ab6a3198f46f381024e53f5abe
+  ABI hash: 90547af38a37e14cd1e98905f9275a14
+  export-list hash: 8ac9c89a1af347b15c0060ee1bc157cc
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a4046e0fdab24403354cf30558c1ea1c
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  PiousPiperSettings.compressedFileOutputLocation
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+457a0a302b310fed908b9649c0c370ea
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   PiousPiperSettings.$trModule2
+                   PiousPiperSettings.$trModule1) -}
+bb98d8b994dc718f0b6b31456aaa9f1a
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "PiousPiperSettings"#) -}
+12c432961c3eb93ef7aaf143e2ee0bd8
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "PiousPiper-0.1.0.0-JMCTGPBLxl9LdhHNld1z3l"#) -}
+9daf866b6b3ffbca3beca6392c03c14f
+  compressedFileOutputLocation :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "test"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

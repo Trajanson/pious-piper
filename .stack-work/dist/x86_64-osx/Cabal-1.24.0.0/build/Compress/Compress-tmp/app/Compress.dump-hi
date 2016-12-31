@@ -1,24 +1,28 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-24 22:46:45.158098 UTC
+2016-12-31 08:15:35.966991 UTC
 
 interface main@main:Main 8001
-  interface hash: 26febfb5171af0283f2ec3a30104f99b
-  ABI hash: a501652186586fe34546cd8afa24cd11
-  export-list hash: 4b4becec6816966ea817836ce14782aa
-  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  interface hash: b52ff457d420c84cce639086a7d5c65e
+  ABI hash: b62ebd1c17bb3c97e9d75f11c1f3f587
+  export-list hash: 03e5912c0152d781ad3f2a9896b84503
+  orphan hash: 98b4e325bc58e438c7fe27b922f46732
   flag hash: 4f9b8f45c6fdf39c5f6cbd6150ac3df1
   sig of: Nothing
   used TH splices: False
   where
 exports:
   Main.main
+  Main.succAll
 module dependencies:
-package dependencies: PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN
-                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+package dependencies: PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
                       containers-0.5.7.1@containers-0.5.7.1
-                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
-                      integer-gmp-1.0.0.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 filepath-1.4.1.0@filepath-1.4.1.0
+                      ghc-prim-0.5.0.0 integer-gmp-1.0.0.1
+                      parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
 orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
 family instance modules: base-4.9.0.0:Control.Applicative
                          base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
@@ -30,13 +34,77 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
                          containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
-import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:Data.String.Strip 51bcb0f9ed8061c8530ab636d17b17ed
-import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:LZW 0b94165d185855bad790e13534ce1c19
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Data.String.Strip 5dc1e365eb2e0f0d6353312687e650a5
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:LZW b3636529a2b1454c5fb750f43dce0743
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:ReaderWriter 1b58139f21ff90c3e3339ac8b62b32b2
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Utilities 7a90a8ab2e620702b0c62e3bd7eb9f23
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Enum fdf7ac3e1b0be0a4a37257601bddad14
 import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  base-4.9.0.0:System.Environment ee0914a962f5508d0fd404c89ee4999b
 import  -/  base-4.9.0.0:System.IO ad985d7a3fc986e9b9c610fb344d9106
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi:Control.Parallel.Strategies 1c0bb3276a94decb36d1d61330e155a0
+bf4211f3bc221bad90b38480b68475fc
+  $s$fShow(,)1 :: GHC.Show.Show [GHC.Integer.Type.Integer]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Main.$s$fShow(,)_$s$fShow[] -}
+bd1207143f60f3a714bfe2f526888d9b
+  $s$fShow(,)_$s$fShow(,)_$cshow ::
+    ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer])
+    -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,U)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: ([GHC.Integer.Type.Integer],
+                          [GHC.Integer.Type.Integer])) ->
+                 GHC.Show.$fShow(,)_$cshowsPrec
+                   @ [GHC.Integer.Type.Integer]
+                   @ [GHC.Integer.Type.Integer]
+                   Main.$s$fShow(,)1
+                   Main.$s$fShow(,)1
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+d12ecfe137aebd477df2a31aa194f704
+  $s$fShow(,)_$s$fShow[] :: GHC.Show.Show [GHC.Integer.Type.Integer]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [GHC.Integer.Type.Integer]
+                  Main.$s$fShow(,)_$s$fShow[]_$cshowsPrec
+                  Main.$s$fShow(,)_$s$fShow[]_$cshow
+                  Main.$s$fShow(,)_$s$fShow[]_$cshowList -}
+89aed8d68b75972c6d4f244613c73de7
+  $s$fShow(,)_$s$fShow[]_$cshow ::
+    [GHC.Integer.Type.Integer] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: [GHC.Integer.Type.Integer]) ->
+                 GHC.Show.$fShowInteger_$cshowList
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+c96dfd1967a834502e4245c9f9f4228b
+  $s$fShow(,)_$s$fShow[]_$cshowList ::
+    [[GHC.Integer.Type.Integer]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: [[GHC.Integer.Type.Integer]])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ [GHC.Integer.Type.Integer]
+                   GHC.Show.$fShowInteger_$cshowList
+                   eta
+                   eta1) -}
+f53af47c4aa6b09422540bf37b88ee7b
+  $s$fShow(,)_$s$fShow[]_$cshowsPrec ::
+    GHC.Types.Int -> [GHC.Integer.Type.Integer] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: GHC.Types.Int)
+                   (eta :: [GHC.Integer.Type.Integer])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.$fShowInteger_$cshowList eta eta1) -}
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -49,37 +117,17 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-c8efbeef303a7f860d0a2373fa734fab
+d9c0dee8a685c5ed422401aaa63f23bf
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-93e8cabb05c1a6ae2aa658e61670dbd9
+01d62c2c484918d4b5d94b688c90c90e
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Strictness: <S,U>,
-     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.FD.openFile1
-                        (GHC.List.head @ GHC.Base.String ipv1)
-                        GHC.IO.IOMode.ReadMode
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Text.hGetContents1
-                        ipv3
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 GHC.IO.Handle.Text.hPutStr2
-                   GHC.IO.Handle.FD.stdout
-                   (GHC.Show.$fShowInteger_$cshowList
-                      (LZW.forwardCompression_forwardCompression
-                         LZW.startingASCIIToIntegerDictionary
-                         ipv5
-                         (GHC.Types.[] @ GHC.Types.Char)
-                         (GHC.Types.[] @ GHC.Integer.Type.Integer))
-                      (GHC.Types.[] @ GHC.Types.Char))
-                   GHC.Types.True
-                   ipv4 } } }) -}
-af950d0d14d5c5e7c398b964d496f5a9
+  {- Arity: 1, Strictness: <S,U> -}
+b08d228f4059532a99441778635cdde9
   main2 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -87,11 +135,43 @@ af950d0d14d5c5e7c398b964d496f5a9
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+b040406592241712e08ee8ba93be8471
+  succAll :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1,
+     Unfolding: (GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   GHC.Enum.$fEnumChar_$csucc) -}
+"SPEC/Main $fShow(,)_$cshow @ [Integer] @ [Integer]" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                                  [GHC.Integer.Type.Integer])
+                                                                     ($dShow1 :: GHC.Show.Show
+                                                                                   [GHC.Integer.Type.Integer])
+  GHC.Show.$fShow(,)_$cshow @ [GHC.Integer.Type.Integer]
+                            @ [GHC.Integer.Type.Integer]
+                            $dShow
+                            $dShow1
+  = Main.$s$fShow(,)_$s$fShow(,)_$cshow
+"SPEC/Main $fShow[] @ Integer" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                            GHC.Integer.Type.Integer)
+  GHC.Show.$fShow[] @ GHC.Integer.Type.Integer $dShow
+  = Main.$s$fShow(,)_$s$fShow[]
+"SPEC/Main $fShow[]_$cshow @ Integer" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                   GHC.Integer.Type.Integer)
+  GHC.Show.$fShow[]_$cshow @ GHC.Integer.Type.Integer $dShow
+  = Main.$s$fShow(,)_$s$fShow[]_$cshow
+"SPEC/Main $fShow[]_$cshowList @ Integer" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                       GHC.Integer.Type.Integer)
+  GHC.Show.$fShow[]_$cshowList @ GHC.Integer.Type.Integer $dShow
+  = Main.$s$fShow(,)_$s$fShow[]_$cshowList
+"SPEC/Main $fShow[]_$cshowsPrec @ Integer" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                        GHC.Integer.Type.Integer)
+  GHC.Show.$fShow[]_$cshowsPrec @ GHC.Integer.Type.Integer $dShow
+  = Main.$s$fShow(,)_$s$fShow[]_$cshowsPrec
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
 parallel variables:
 parallel tycons:
-trusted: safe
+trusted: none
 require own pkg trusted: False
 

@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-24 22:27:56.896217 UTC
+2016-12-31 07:48:49.833396 UTC
 
 interface main@main:Main 8001
-  interface hash: 3d1661267bef46c0067637dac7888293
-  ABI hash: 799326071161dfca728de5fbc88b5ce4
-  export-list hash: 4b4becec6816966ea817836ce14782aa
+  interface hash: 7e0cd64f69c023d4fbc9ded538b507b6
+  ABI hash: b1779d6d1a1c70545649c9106a70b085
+  export-list hash: c64500c647df2664cf70ec0ea1e49f25
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c18a8526b3f74fa52626521cdd4a2fa
   sig of: Nothing
@@ -14,11 +14,12 @@ interface main@main:Main 8001
 exports:
   Main.main
 module dependencies:
-package dependencies: PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN
-                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+package dependencies: PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
                       containers-0.5.7.1@containers-0.5.7.1
                       deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
                       integer-gmp-1.0.0.1
+                      parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi
 orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
 family instance modules: base-4.9.0.0:Control.Applicative
                          base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
@@ -30,11 +31,12 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
                          containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
-import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:Data.String.Strip 51bcb0f9ed8061c8530ab636d17b17ed
-import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN:LZW 0b94165d185855bad790e13534ce1c19
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Data.String.Strip 5dc1e365eb2e0f0d6353312687e650a5
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:LZW b3636529a2b1454c5fb750f43dce0743
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  base-4.9.0.0:System.IO ad985d7a3fc986e9b9c610fb344d9106
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi:Control.Parallel.Strategies 1c0bb3276a94decb36d1d61330e155a0
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -47,12 +49,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-1c48098b0f65fd86fefe12ffe9af41a2
+7b2ededb7b1867599f5dac14adf8ac8c
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-7ba884c8cb2445b9f6b917751733c214
+a3447517e8ef1889214d9a57a9279fa1
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -64,27 +66,23 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                    Main.main2
                    GHC.Types.True
                    eta) -}
-ff46ac62d48a9124e9a8fba28044497f
-  main2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows8
-                   Main.main3) -}
-e34c1e3268fda386bca3b71bd0c7bd5f
-  main3 :: GHC.Base.String
-  {- Unfolding: (GHC.Show.showLitString Main.main5 Main.main4) -}
-a35b7e9355d5dc3db7e1203bfff470b7
-  main4 :: [GHC.Types.Char]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows8
+f91f689b84436ab3e8dd8e204e12595c
+  main2 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.$fShowInteger_$cshowList
+                   Main.main3
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-eeac06184cc397fbe4002357455566d8
-  main5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "55"#) -}
-c4306dbf2292492fbd8607ec8ad6a4ea
-  main6 ::
+a2a43fdeca4c9de9024c8ece3149c8f8
+  main3 :: [GHC.Integer.Type.Integer]
+  {- Unfolding: (LZW.forwardCompression_forwardCompression
+                   LZW.startingASCIIToIntegerDictionary
+                   Main.main4
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+d3a58fdfe8fe1149ab16fb15b662f21d
+  main4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "aa"#) -}
+e0be68fff6ce9191973bf5c22ee85db3
+  main5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
@@ -96,6 +94,6 @@ vectorised tycons:
 vectorised reused tycons:
 parallel variables:
 parallel tycons:
-trusted: safe
+trusted: none
 require own pkg trusted: False
 

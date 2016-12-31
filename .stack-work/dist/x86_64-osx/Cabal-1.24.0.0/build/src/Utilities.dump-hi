@@ -1,0 +1,107 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-31 07:44:08.809072 UTC
+
+interface PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Utilities 8001
+  interface hash: 1f172ce06ef1a3d3041c146a209010c1
+  ABI hash: 7a90a8ab2e620702b0c62e3bd7eb9f23
+  export-list hash: 289c25c0aab07c0b22c864db842fa2f6
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a4046e0fdab24403354cf30558c1ea1c
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Utilities.runInParallel
+  Utilities.splitInHalf
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  parallel-3.2.1.0@parallel-3.2.1.0-6VcN0yUHtcs831TgbJiSSi:Control.Parallel.Strategies 1c0bb3276a94decb36d1d61330e155a0
+a7e63e683d20ef9b465b2ee808156c99
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Utilities.$trModule2
+                   Utilities.$trModule1) -}
+38f082675a4d1c34e43a2b4e12c320ca
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Utilities"#) -}
+a282ee515a8c8a728c385a7a90f8239a
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv"#) -}
+efd1a2c6c941bdbb7050272821903ce7
+  runInParallel :: (t, t) -> (t -> t1) -> (t1, t1)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U)><L,C(U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ t @ t1 (ds :: (t, t)) (func :: t -> t1) ->
+                 case ds of wild { (,) firstHalf secondHalf ->
+                 case GHC.Prim.spark#
+                        @ t1
+                        @ GHC.Prim.RealWorld
+                        (func firstHalf)
+                        GHC.Prim.realWorld# of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.Prim.spark#
+                        @ t1
+                        @ GHC.Prim.RealWorld
+                        (func secondHalf)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (ipv1, ipv3) } } }) -}
+991899f801955444a692121f134a8321
+  splitInHalf :: [a] -> ([a], [a])
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (w :: [a]) ->
+                 case GHC.List.$wlenAcc @ a w 0# of ww2 { DEFAULT ->
+                 case GHC.Classes.divInt# ww2 2# of ww4 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.<=# ww4 0#) of wild1 {
+                   GHC.Types.False
+                   -> case w of wild {
+                        [] -> (GHC.Types.[] @ a, GHC.Types.[] @ a)
+                        : ipv ipv1
+                        -> case ww4 of ds1 {
+                             DEFAULT
+                             -> let {
+                                  ds2 :: ([a], [a])
+                                  = case GHC.List.splitAt_$s$wsplitAt'
+                                           @ a
+                                           ipv1
+                                           (GHC.Prim.-# ds1 1#) of ww { (#,#) ww1 ww7 ->
+                                    (ww1, ww7) }
+                                } in
+                                (GHC.Types.: @ a ipv (case ds2 of wild2 { (,) xs' xs'' -> xs' }),
+                                 case ds2 of wild2 { (,) xs' xs'' -> xs'' })
+                             1# -> (GHC.Types.: @ a ipv (GHC.Types.[] @ a), ipv1) } }
+                   GHC.Types.True -> (GHC.Types.[] @ a, w) } } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

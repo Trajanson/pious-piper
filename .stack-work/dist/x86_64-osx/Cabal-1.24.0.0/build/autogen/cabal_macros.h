@@ -14,12 +14,40 @@
   (major1) == 4 && (major2) <  9 || \
   (major1) == 4 && (major2) == 9 && (minor) <= 0)
 
+/* package bytestring-0.10.8.1 */
+#define VERSION_bytestring "0.10.8.1"
+#define MIN_VERSION_bytestring(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  10 || \
+  (major1) == 0 && (major2) == 10 && (minor) <= 8)
+
 /* package containers-0.5.7.1 */
 #define VERSION_containers "0.5.7.1"
 #define MIN_VERSION_containers(major1,major2,minor) (\
   (major1) <  0 || \
   (major1) == 0 && (major2) <  5 || \
   (major1) == 0 && (major2) == 5 && (minor) <= 7)
+
+/* package filepath-1.4.1.0 */
+#define VERSION_filepath "1.4.1.0"
+#define MIN_VERSION_filepath(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  4 || \
+  (major1) == 1 && (major2) == 4 && (minor) <= 1)
+
+/* package parallel-3.2.1.0 */
+#define VERSION_parallel "3.2.1.0"
+#define MIN_VERSION_parallel(major1,major2,minor) (\
+  (major1) <  3 || \
+  (major1) == 3 && (major2) <  2 || \
+  (major1) == 3 && (major2) == 2 && (minor) <= 1)
+
+/* package split-0.2.3.1 */
+#define VERSION_split "0.2.3.1"
+#define MIN_VERSION_split(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  2 || \
+  (major1) == 0 && (major2) == 2 && (minor) <= 3)
 
 /* package QuickCheck-2.8.2 */
 #define VERSION_QuickCheck "2.8.2"
@@ -84,7 +112,7 @@
   (major1) == 0 && (major2) <  29 || \
   (major1) == 0 && (major2) == 29 && (minor) <= 1)
 
-#define CURRENT_COMPONENT_ID "PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN"
+#define CURRENT_COMPONENT_ID "PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv"
 
-#define CURRENT_PACKAGE_KEY "PiousPiper-0.1.0.0-CBH2hPdBWWMBH4a2OIunpN"
+#define CURRENT_PACKAGE_KEY "PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv"
 

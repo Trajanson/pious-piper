@@ -1,0 +1,52 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-31 06:44:19.948973 UTC
+
+interface PiousPiper-0.1.0.0-JMCTGPBLxl9LdhHNld1z3l:Settings 8001
+  interface hash: 182a338b4c9932b652d7b6bb0b739621
+  ABI hash: f9e1874aa413f74f9f00e0de4b6611f8
+  export-list hash: a2d0064bd23a5dfab14d6425b127be18
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a4046e0fdab24403354cf30558c1ea1c
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Settings.compressedFileOutputLocation
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+f7563a3ee565dfb2e9c3239239347b6e
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Settings.$trModule2
+                   Settings.$trModule1) -}
+bcebabbf60006f02a727b698e7d91f72
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Settings"#) -}
+9b98478e1cb2841f4c9c1985a2d29fc9
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "PiousPiper-0.1.0.0-JMCTGPBLxl9LdhHNld1z3l"#) -}
+08777c1a61202ad0b1eede7877de1d76
+  compressedFileOutputLocation :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "test"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
