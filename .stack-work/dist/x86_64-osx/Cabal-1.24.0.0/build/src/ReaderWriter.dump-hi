@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-31 07:59:00.528561 UTC
+2016-12-31 17:07:47.655442 UTC
 
 interface PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:ReaderWriter 8001
-  interface hash: 71d7ce941eb3432e18b91cd0ade73c5a
-  ABI hash: 1b58139f21ff90c3e3339ac8b62b32b2
-  export-list hash: 22beeed6b02bdf0153d7d00cde002411
+  interface hash: 7b4557d1a78b41179ad9ea3046edacd2
+  ABI hash: 212450cfe3f1ac43d8946bc6b8d9d0c6
+  export-list hash: 4b055238b7a12ad186a55cbcb6017e41
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a4046e0fdab24403354cf30558c1ea1c
   sig of: Nothing
@@ -21,6 +21,7 @@ exports:
   ReaderWriter.decompressedFileOutputLocation
   ReaderWriter.dividerValue
   ReaderWriter.getCompressedDataAsIntegers
+  ReaderWriter.getNumBytesPerIntegerInEncodedText
   ReaderWriter.mergeCompressedData
   ReaderWriter.readCompressedDataFromFile
   ReaderWriter.splitCompressedIntegersOnDividerValue
@@ -242,6 +243,11 @@ cf561cce682a68e4f2f9bfe4329245cc
 ce654546c3e7bfc4d8adfaad6d8d903c
   getCompressedDataAsIntegers1 :: Data.ByteString.Internal.ByteString
   {- Strictness: x -}
+4001608125d1e5fb65505bc5088b7495
+  getNumBytesPerIntegerInEncodedText ::
+    Data.ByteString.Internal.ByteString -> GHC.Word.Word8
+  {- Arity: 1, Strictness: <S(SLSS),1*U(U,U,U,U)>m,
+     Unfolding: InlineRule (0, True, True) Data.ByteString.head -}
 8db8e1c1e72a180a64f65dc6babc419e
   mergeCompressedData ::
     ([GHC.Integer.Type.Integer], [GHC.Integer.Type.Integer])
@@ -261,16 +267,47 @@ ce654546c3e7bfc4d8adfaad6d8d903c
                       @ GHC.Integer.Type.Integer
                       ReaderWriter.dividerValue
                       secondHalf) }) -}
-7c3f5b8f9f917851cdc763ab1e752298
+dd975ea3026d005b2f10bc382bdf1246
   readCompressedDataFromFile ::
     GHC.Base.String -> GHC.Types.IO Data.ByteString.Internal.ByteString
-  {- Arity: 2, Strictness: <L,U><S,U>,
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Data.ByteString.readFile1
+                ReaderWriter.readCompressedDataFromFile1
                   `cast`
-                (<GHC.IO.FilePath>_R
+                (<GHC.Base.String>_R
                  ->_R Sym (GHC.Types.N:IO[0]
                                <Data.ByteString.Internal.ByteString>_R)) -}
+924e1d86c2ba291761d121707fc1119a
+  readCompressedDataFromFile1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.ByteString.Internal.ByteString #)
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: (\ (filename :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 Control.Exception.Base.bracket1
+                   @ GHC.IO.Handle.Types.Handle
+                   @ ()
+                   @ Data.ByteString.Internal.ByteString
+                   (GHC.IO.Handle.FD.openBinaryFile1
+                      (GHC.Base.++
+                         @ GHC.Types.Char
+                         ReaderWriter.compressedFileOutputLocation
+                         filename)
+                      GHC.IO.IOMode.ReadMode)
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                   GHC.IO.Handle.hClose1
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   Data.ByteString.readFile2
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.N:IO[0]
+                                  <Data.ByteString.Internal.ByteString>_R))
+                   eta) -}
 aa32d3db2e2d998eadc9f5ca060f575c
   splitCompressedIntegersOnDividerValue ::
     [GHC.Integer.Type.Integer]

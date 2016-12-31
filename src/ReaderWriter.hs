@@ -31,6 +31,10 @@ splitCompressedIntegersOnDividerValue integerData = (head listOfParallelData, la
         listOfParallelData = splitOn [0] integerData
 
 
+-- for debugging
+getNumBytesPerIntegerInEncodedText :: B.ByteString -> Word8
+getNumBytesPerIntegerInEncodedText fileContents = B.head fileContents
+
 getCompressedDataAsIntegers :: B.ByteString -> [Integer]
 getCompressedDataAsIntegers fileContents = convertListOf8BytesToListOfIntegers bytes bytesPerIntegerAsInteger
   where bytesPerInteger :: Word8
@@ -47,7 +51,7 @@ getCompressedDataAsIntegers fileContents = convertListOf8BytesToListOfIntegers b
 
 
 readCompressedDataFromFile :: String -> IO B.ByteString
-readCompressedDataFromFile filename = B.readFile filename
+readCompressedDataFromFile filename = B.readFile $ compressedFileOutputLocation ++ filename
 
 
 

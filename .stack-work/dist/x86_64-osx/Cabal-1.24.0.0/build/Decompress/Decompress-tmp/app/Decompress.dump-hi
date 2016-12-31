@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-31 07:59:02.679311 UTC
+2016-12-31 18:06:32.780592 UTC
 
 interface main@main:Main 8001
-  interface hash: 1f3d97974d4630d7594e6312d883b71b
-  ABI hash: dc62d6260432776a68e2b3b069ba098c
+  interface hash: beb66504cb3b93e5699b2f68ecd5932d
+  ABI hash: 03f6446609f015803654eddd809ef948
   export-list hash: 7cf29f26d6d43bc4e410139308365f8f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 941cf91fe68c7455e687bb1992225e23
@@ -35,8 +35,8 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
 import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Data.String.Strip 5dc1e365eb2e0f0d6353312687e650a5
-import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:LZW b3636529a2b1454c5fb750f43dce0743
-import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:ReaderWriter 1b58139f21ff90c3e3339ac8b62b32b2
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:LZW 26ef4cb09eaddb3c702526c7dfcdc47d
+import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:ReaderWriter 212450cfe3f1ac43d8946bc6b8d9d0c6
 import  -/  PiousPiper-0.1.0.0@PiousPiper-0.1.0.0-7JUD62QrIKHrrLhY6xrzv:Utilities 7a90a8ab2e620702b0c62e3bd7eb9f23
 import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
 import  -/  base-4.9.0.0:GHC.Enum fdf7ac3e1b0be0a4a37257601bddad14
@@ -58,12 +58,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-e17827aa7d2e282cf6866d88eb772ea9
+8056ca84ae5c6cf220bff921060ace64
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-164bdf7cc8b4d9f829c27d80b67601d3
+73d37a14f1370c66ecdc945fe0dda3f6
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -71,26 +71,14 @@ e17827aa7d2e282cf6866d88eb772ea9
      Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
                  let {
-                   filename :: GHC.Base.String
-                   = case ipv1 of wild {
-                       [] -> GHC.List.badHead @ GHC.Base.String : x ds2 -> x }
+                   filename :: [GHC.Types.Char]
+                   = GHC.CString.unpackAppendCString#
+                       "compressed-"#
+                       (case ipv1 of wild {
+                          [] -> GHC.List.badHead @ GHC.Base.String : x ds2 -> x })
                  } in
-                 case Control.Exception.Base.bracket1
-                        @ GHC.IO.Handle.Types.Handle
-                        @ ()
-                        @ Data.ByteString.Internal.ByteString
-                        (GHC.IO.Handle.FD.openBinaryFile1 filename GHC.IO.IOMode.ReadMode)
-                          `cast`
-                        (Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R))
-                        GHC.IO.Handle.hClose1
-                          `cast`
-                        (<GHC.IO.Handle.Types.Handle>_R
-                         ->_R Sym (GHC.Types.N:IO[0] <()>_R))
-                        Data.ByteString.readFile2
-                          `cast`
-                        (<GHC.IO.Handle.Types.Handle>_R
-                         ->_R Sym (GHC.Types.N:IO[0]
-                                       <Data.ByteString.Internal.ByteString>_R))
+                 case ReaderWriter.readCompressedDataFromFile1
+                        filename
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
                  case ReaderWriter.writeDecompressedTextToFile1
                         filename
@@ -99,23 +87,21 @@ e17827aa7d2e282cf6866d88eb772ea9
                            = Main.main6 (ReaderWriter.getCompressedDataAsIntegers ipv3)
                          } in
                          case GHC.Prim.spark#
-                                @ [GHC.Types.Char]
+                                @ GHC.Base.String
                                 @ GHC.Prim.RealWorld
                                 (case listOfParallelData of wild {
-                                   [] -> case GHC.List.badHead ret_ty [GHC.Types.Char] of {}
+                                   [] -> case GHC.List.badHead ret_ty GHC.Base.String of {}
                                    : x ds3
                                    -> LZW.forwardDecompression
-                                        @ GHC.Types.Char
                                         LZW.startingIntegerToASCIIDictionary
                                         x
                                         (GHC.Types.[] @ GHC.Integer.Type.Integer)
                                         (GHC.Types.[] @ GHC.Types.Char) })
                                 GHC.Prim.realWorld# of ds3 { (#,#) ipv4 ipv5 ->
                          case GHC.Prim.spark#
-                                @ [GHC.Types.Char]
+                                @ GHC.Base.String
                                 @ GHC.Prim.RealWorld
                                 (LZW.forwardDecompression
-                                   @ GHC.Types.Char
                                    LZW.startingIntegerToASCIIDictionary
                                    (Main.main_go
                                       listOfParallelData
@@ -156,7 +142,7 @@ f7d65e92cc823b7c6a6d674298f75634
                    @ GHC.Integer.Type.Integer
                    GHC.Integer.Type.$fEqInteger
                    ReaderWriter.splitCompressedIntegersOnDividerValue1) -}
-ce1d569116b92016564f3d465e383499
+58d55352d8c4ddaefafaa40820c64dff
   main7 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

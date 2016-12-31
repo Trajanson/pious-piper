@@ -18,32 +18,8 @@ lzwCompress text = forwardCompression (startingASCIIToIntegerDictionary) text []
 
 
 
--- CONDITIONS
--- REMAINING TEXT IS EMPTY
-    -- IF NO TEXT IN BUFFER  -----------> RETURN ACCUMULATED COMPRESSION
-    -- IF TEXT IN BUFFER
-        -- IF IN DICTIONARY     --------> PUSH COMPRESSED BUFFER INTO ACCUM
-        --                      --------> RETURN
-        --
-        -- IF NOT IN DICTIONARY --------> PUSH COMPRESSED INIT INTO ACCUM
-        --                      --------> CALL AGAIN
--- REMAINING TEXT IS FULL
-    -- IF NO TEXT IN BUFFER  ------------> MOVE HEAD OF REMAIN TEXT TO BUFFER
-    --                       ------------> CALL AGAIN
-    -- IF TEXT IN BUFFER
-        -- IF IN DICTIONARY  ------------> APPEND HEAD OF TEXT ONTO BUFFER
-        --                   ------------> CALL AGAIN
-        --
-        --------------------------------------------------------------------------------
-        -- IF NOT IN DICTIONARY ---------> PUSH COMPRESSED INIT INTO ACCUM
-        --                      ---------> CALL AGAIN
 
-
-
-
-
-
---                 dictionary remainingText textInBuffer accumulatedCompression
+forwardCompression :: Map.Map [Char] Integer -> String -> String -> [Integer] -> [Integer]
 forwardCompression dictionary []            []           accumulatedCompression = accumulatedCompression
 forwardCompression dictionary []            textInBuffer accumulatedCompression
     | Map.member textInBuffer dictionary =
@@ -73,11 +49,17 @@ forwardCompression dictionary remainingText textInBuffer accumulatedCompression
                                                               ([last textInBuffer])
                                                               (accumulatedCompression ++ [compressBuffer dictionary (init textInBuffer)])
 
+compressBuffer :: Map.Map [Char] Integer -> [Char] -> Integer
 compressBuffer dictionary textInBuffer
- | otherwise = fromJust (Map.lookup textInBuffer dictionary)
+  | isJust lookedUpKey = fromJust lookedUpKey
+  where lookedUpKey = Map.lookup textInBuffer dictionary
 
 
 
+ -- decompressBuffer dictionary code
+ --   | isJust lookedUpKey = fromJust lookedUpKey
+ --   | otherwise = fail "Could not find " ++ ( show code) ++ " in " ++ ( show dictionary )
+ --   where lookedUpKey = Map.lookup code dictionary
 
 
 
@@ -99,27 +81,17 @@ startingIntegerToASCIIDictionary = Map.fromList [tupelize x | x <- [1..127] ]
 
 
 
--- lzwDecompress :: [Integer] -> String
+lzwDecompress :: [Integer] -> String
 lzwDecompress charCodes = forwardDecompression (startingIntegerToASCIIDictionary) charCodes [] []
 
 
 
 
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
--- CONVERT BUFFER TO CODES NOT LETTERS
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
 
 
  --                  dictionary remainingCharCodes buffer accumulatedText
 -- forwardDecompression dictionary []                 buffer accumulatedText = accumulatedText
+forwardDecompression :: Map.Map Integer [Char] -> [Integer] -> [Integer] -> String -> String
 forwardDecompression dictionary []                 buffer accumulatedText = accumulatedText
 forwardDecompression dictionary remainingCharCodes []     accumulatedText = forwardDecompression dictionary
                                                                                                  (tail remainingCharCodes)
@@ -160,10 +132,11 @@ forwardDecompression dictionary remainingCharCodes buffer accumulatedText
 
 
 
-
+lzwBuildDictionary :: [Integer] -> Map.Map Integer [Char]
 lzwBuildDictionary charCodes = forwardBuildDictionary (startingIntegerToASCIIDictionary) charCodes [] []
 
 
+forwardBuildDictionary :: Map.Map Integer [Char] -> [Integer] -> [Integer] -> String -> Map.Map Integer [Char]
 forwardBuildDictionary dictionary []                 buffer accumulatedText = dictionary
 forwardBuildDictionary dictionary remainingCharCodes []     accumulatedText = forwardBuildDictionary dictionary
                                                                                                 (tail remainingCharCodes)
@@ -191,6 +164,8 @@ forwardBuildDictionary dictionary remainingCharCodes buffer accumulatedText
 
 
 
-
+decompressBuffer :: Map.Map Integer [Char] -> Integer -> [Char]
 decompressBuffer dictionary code
-  | otherwise = fromJust (Map.lookup code dictionary)
+  | isJust lookedUpKey = fromJust lookedUpKey
+  | otherwise = fail "Could not find " ++ ( show code) ++ " in " ++ ( show dictionary )
+  where lookedUpKey = Map.lookup code dictionary

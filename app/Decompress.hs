@@ -10,9 +10,10 @@ import LZW
 
 main :: IO ()
 main = do args <- getArgs
-          let filename = head args
+          let filename = "compressed-" ++ head args
           fileContents <- readCompressedDataFromFile filename
           let compressedDataAsIntegers = getCompressedDataAsIntegers fileContents
+
           let compressedSplitData = splitCompressedIntegersOnDividerValue compressedDataAsIntegers
 
           let decompressedSplitText = runInParallel compressedSplitData lzwDecompress

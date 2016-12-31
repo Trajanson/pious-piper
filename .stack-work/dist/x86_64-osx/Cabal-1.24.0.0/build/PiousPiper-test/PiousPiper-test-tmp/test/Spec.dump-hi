@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-31 08:14:24.674241 UTC
+2016-12-31 17:59:19.165638 UTC
 
 interface main@main:Main 8001
-  interface hash: 6ecc2c86cf96ae610e2ddd4462171ee8
-  ABI hash: 39ac5482c188570b2942575f88d2fa77
+  interface hash: 75fff1aa1e523df5a87df3d867c454d7
+  ABI hash: d9be210cfcade5fac1cd2a49e6cb52ac
   export-list hash: b63f80a25b79a06529c2237965c553c7
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 852b68f0d894f34a13587fe7779171f4
@@ -71,9 +71,9 @@ import  -/  hspec-core-2.2.4@hspec-core-2.2.4-DeIo5pJi2jNEhr4KZ6VUIq:Test.Hspec.
 import  -/  Data.String.StripSpec 7f45fda23a6fca03c1497c7d0c6ccd9f
   exports: 1390db3d5648537d9c65da3331b23d9b
   spec 0692329acb505e33a45f2a60aa80b049
-import  -/  LZWSpec 006b496a37dbe8fd0d1a7a10bc8c53aa
+import  -/  LZWSpec 882c1626b497d6d0a0b973de3cb16d55
   exports: 6bccce665e7401cdb0e67fe1bdf6774c
-  spec 486ca62660865ecc2c220e1237204718
+  spec af349d3adec5842db7578b84956d855c
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -86,12 +86,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-799ba5374f8bfb815b9c1d3cfef94beb
+b57e112a28a61896a95c6868c48d6813
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-3f3f1c400cb88e4ac7412a1902976f1d
+2534ed95f76e7ca572b56e9a41cfe104
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -179,7 +179,7 @@ ce2cbf7aacfe6ab37be060fd9ef40015
   main18 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "test/Data/String/StripSpec.hs"#) -}
-6edc6ce27d1b44e2bc820aa843fe945a
+ecdcfb1b3844038f24cd018cfe68be39
   main19 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -187,7 +187,7 @@ ce2cbf7aacfe6ab37be060fd9ef40015
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-606f80e99793bc29686e9b5d1871f26d
+8d565f192aad61a286063030a07def38
   main2 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
@@ -231,7 +231,7 @@ ce2cbf7aacfe6ab37be060fd9ef40015
                             (Test.Hspec.Core.Tree.Item ()))
                        w2
                        (case ipv3 of wild1 { (,) b1 w' -> w' }) }) #) } }) -}
-56c8fcb018dd5ef85f0f78eaea275e16
+13baa81181630b817bfe3c304ac55716
   main3 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
@@ -243,14 +243,14 @@ ce2cbf7aacfe6ab37be060fd9ef40015
      Unfolding: (\ (eta :: GHC.Prim.State#
                              GHC.Prim.RealWorld)[OneShot] ->
                  (# eta, Main.main4 #)) -}
-98e67a319771972d6ac5c54b0f9303e4
+ea10af0eaf5a1d600ff86b9d9d59b0a6
   main4 ::
     ((),
      [Test.Hspec.Core.Tree.Tree
         (Test.Hspec.Core.Example.ActionWith ())
         (Test.Hspec.Core.Tree.Item ())])
   {- Unfolding: ((GHC.Tuple.(), Main.main5)) -}
-54f649631fa4193e2ce719960fc9b9ee
+29ff9fdf79d897b78f0f5ac9c7ae807c
   main5 ::
     [Test.Hspec.Core.Tree.Tree
        (Test.Hspec.Core.Example.ActionWith ())
@@ -264,7 +264,7 @@ ce2cbf7aacfe6ab37be060fd9ef40015
                       @ (Test.Hspec.Core.Tree.Tree
                            (Test.Hspec.Core.Example.ActionWith ())
                            (Test.Hspec.Core.Tree.Item ())))) -}
-82df38a8aa1afa4e9ebc4260c6068487
+10a27a72decc8634f621e85dbb0db8bb
   main6 ::
     Test.Hspec.Core.Tree.Tree
       (Test.Hspec.Core.Example.ActionWith ())
@@ -286,7 +286,7 @@ be2e5815e1f96a0532db625da519bc01
 fdf25f2d39dcf6108a33c6706337b2d3
   main9 :: GHC.Types.Char
   {- HasNoCafRefs, Unfolding: (GHC.Types.C# 'L'#) -}
-fe40abe32fe38c96f2d5888959e56feb
+60c9837ac425c19de680bb736a5e29b5
   spec :: Test.Hspec.Core.Spec.Monad.Spec
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
