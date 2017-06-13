@@ -4,11 +4,13 @@
 
 #### Explanation of Implementation
 
-LZW compression is an on-the-fly compression algorithm. It starts with a dictionary that maps ASCII characters to numbers. As groups of characters are encountered, these characters are grouped together and given a new code beyond that of the ASCII range. A benefit of this method of determining encoding patterns is that the mapping of patterns to codes, which must be conserved for the sake of compression, is derived based on the frequency of patterns in the text.
+LZW compression is an on-the-fly compression algorithm. It starts with a dictionary that maps ASCII characters to their standard 8-bit representations. As groups of characters are encountered, these characters are grouped together and given a new code beyond that of the ASCII range (0 - 127). A benefit of this method of determining encoding patterns is that the mapping of patterns to codes, which must be conserved for the sake of compression, is derived based on the frequency of patterns in the text.
 
-LZW decompression works the same way in reverse. As ASCII characters are encountered in the compressed code, their groupings are used to create new mappings of characters to codes.
+LZW decompression operates via the same manner in reverse. As ASCII characters are encountered in the compressed code, their groupings are used to create new mappings of characters to codes.
 
-The multi-threading component of this algorithm is implemented by dividing splitting the encoded pattern by a pre-determined code and then running the decompression algorithm in parallel with read-heads along the two seperate segments of the encoding.
+The multi-threading component of this algorithm is implemented by segmenting the encoded text along a pre-determined pattern and then running the decompression algorithm in parallel with read-heads operating along the separate segments of the encoding.
+
+A drawback that limits the effectiveness of standard LZW compression is the increasing number of bits that are needed per character encoding as the mapping dictionary grows larger and larger. The parallelized implementation of LZW compression lessens the impact of this drawback by forming isolated mapping dictionaries that are customized to the unique encoded text segments.
 
 #### Requirements
 - **[Follow this link to install Haskell][installHaskell]**
